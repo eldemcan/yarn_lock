@@ -11,8 +11,8 @@ RSpec.describe YarnLockParser::Parser do
     it "parses small lock file" do
       res = described_class.parse("spec/fixtures/long_yarn.lock")
       expect(res.size).to eq(53)
-      expect(res.first.name).to eq("accepts")
-      expect(res.last.name).to eq("vary")
+      expect(res.first[:name]).to eq("accepts")
+      expect(res.last[:name]).to eq("vary")
     end
 
     it "parses long lock file" do
