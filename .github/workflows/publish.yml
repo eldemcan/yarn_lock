@@ -15,12 +15,15 @@ jobs:
   # This workflow contains a single job called "build"
   publish:
     runs-on: ubuntu-latest
-  
+    name: build + publish
+
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
-    # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
-    - uses: cadwallion/publish-rubygems-action@v1.0.0
+    - uses: actions/checkout@v2
+    - name: Set up Ruby 2.6
+      uses: actions/setup-ruby@v1
+      with:
+        version: 2.6.x
 
-    # Runs a single command using the runners shell
-    - name: Finished
-      run: Done!
+    - name: publish
+    - uses: cadwallion/publish-rubygems-action@v1.0.0
