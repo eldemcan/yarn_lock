@@ -1,6 +1,7 @@
 # frozen_string_literal: true
 
 require "yarn_lock_parser/version"
+require "set"
 
 module YarnLockParser
   class Parser
